@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!-- Please edit the index.jade or the files in comparisons/, this file is generated--><!--[if lt IE 10 ]> <html class="old-ie"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <title>Swift is a lot like Scala</title>
+  <meta name="description" content="Examples of how Apple's Swift language is similar to Scala.">
+  <link rel="stylesheet" href="css/prism.css">
+  <link rel="stylesheet" href="css/index.css">
+<!--   <script type="text/javascript" src="//use.typekit.net/ghy0wve.js"></script> -->
+<!--   <script type="text/javascript">try{Typekit.load();}catch(e){}</script> -->
+  <script src="js/prism.js"></script>
+  <script src="js/index.js"></script>
+</head>
+<body><a href="https://github.com/leverich/swiftislikescala"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
+  <div class="page">
+    <header class="page-header">
+      <div class="inner">
+        <h1>Swift is a lot like Scala</h1>
+      </div>
+    </header>
+    <div class="explanation">
+      <div class="inner">
+        <p>A new programming language called <a href="https://developer.apple.com/swift/">Swift</a> was announced at WWDC'14. Here's a source-to-source comparison of Swift and <a href="http://www.scala-lang.org/">Scala</a> using the <a href="https://developer.apple.com/library/prerelease/ios/documentation/Swift/Conceptual/Swift_Programming_Language/GuidedTour.html">examples</a> given in "The Swift Programming Language" book published by Apple in the iTunes Store.</p>
+        <p>I suspect the two are related ;-) Syntacticly, it's fair to say that Swift is a dialect of Scala. Swift inherits from Scala most of the "banner" features listed by Apple: Type Inference, Closures, Tuples, Protocols, Extensions, Generics, Read-Eval-Print-Loop, etc.</p>
+        <p>
+          Despite their syntactic similarity, Swift's runtime environment is quite distinct from Scala's, and is perhaps the most interesting aspect of the new language.
+          Scala compiles to the JVM, uses garbage collection, and its object model transparently integrates with Java.
+          Swift compiles to native code, uses automatic reference counting, and its object model transparently integrates with Objective-C.
+          Thus, the similarity between the two languages does not extend much below the surface.
+        </p>
+        <p><a href="https://github.com/densh/talks/">Den Shabalin</a> provides another excellent <a href="http://www.scribd.com/doc/227879724/Swift-vs-Scala-2-11">point-by-point comparison</a>.</p>
+      </div>
+    </div>
+    <header class="search">
+      <input type="search" placeholder="Search..." required>
+    </header>
+    <div class="comparisons">
+      <div class="empty-message">Your search didn't match any comparisons.</div>
+      <section id="basics" class="odd">
+        <div class="inner">
+          <h2>Basics</h2>
+          <div id="hello_world" class="comparison">
+            <h3><a href="#hello_world">Hello World</a></h3>
+            <div data-browser="swift" class="browser swift">
+              <h4>SWIFT</h4>
+              <div data-lang="scala" class="code-block language-scala">
+                <pre><code>println(&quot;Hello, world!&quot;)
+</code></pre>
+              </div>
+            </div>
+            <div data-browser="scala" class="browser scala">
+              <h4>SCALA</h4>
+              <div data-lang="scala" class="code-block language-scala">
+                <pre><code>println(&quot;Hello, world!&quot;)
+</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <footer><p>Shamelessly forked from <a href="http://youmightnotneedjquery.com/">http://youmightnotneedjquery.com/</a>.</footer>
+  </div>
+  <div style="-webkit-transform: translateZ(0);"></div>
+</body>
