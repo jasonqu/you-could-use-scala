@@ -1,0 +1,857 @@
+
+
+
+
+
+<!DOCTYPE html>
+<!-- Please edit the md files in src/main/content/, this file is generated--><!--[if lt IE 10 ]> <html class="old-ie"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <title>You could use Scala</title>
+  <meta name="description" content="A simple migration guide from Java to Scala.">
+  <link rel="stylesheet" href="css/prism.css">
+  <link rel="stylesheet" href="css/index.css">
+<!--   <script type="text/javascript" src="//use.typekit.net/ghy0wve.js"></script> -->
+<!--   <script type="text/javascript">try{Typekit.load();}catch(e){}</script> -->
+  <script src="js/prism.js"></script>
+  <script src="js/index.js"></script>
+</head>
+<body><a href=""><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
+  <div class="page">
+    <header class="page-header">
+      <div class="inner">
+        <h1>You could use Scala</h1>
+      </div>
+    </header>
+    <div class="explanation">
+      <div class="inner">
+        <p>
+          If you are tired of redundancy in java, you could use scala, because scala is concise and powerful. This is
+          a simple comparison between java and scala, hope to convince you that use scala is a good choice.
+        </p>
+      </div>
+    </div>
+    <header class="search">
+      <input type="search" placeholder="Search..." required>
+    </header>
+    <div class="comparisons">
+      <div class="empty-message">Your search didn't match any comparisons.</div>
+
+      
+      <section id="basics" >
+        <div class="inner">
+          <h2>Basics</h2>
+          
+          
+          <div id="hello_world" class="comparison">
+            <h3><a href="#hello_world">Hello World</a></h3>
+            
+            
+            <div data-browser="java" class="browser java">
+              <h4>JAVA</h4>
+              <div data-lang="scala" class="code-block language-scala">
+                <pre><code>System.out.println(&quot;Hello, world!&quot;);
+</code></pre>
+              </div>
+            </div>
+            
+            <div data-browser="scala" class="browser scala">
+              <h4>SCALA</h4>
+              <div data-lang="scala" class="code-block language-scala">
+                <pre><code>println(&quot;Hello, world!&quot;)
+</code></pre>
+              </div>
+            </div>
+            
+
+          </div>
+          
+          <div id="variables_and_constants" class="comparison">
+            <h3><a href="#variables_and_constants">Variables And Constants</a></h3>
+            
+            
+            <div data-browser="java" class="browser java">
+              <h4>JAVA</h4>
+              <div data-lang="scala" class="code-block language-scala">
+                <pre><code>int myVariable = 42;
+myVariable = 50;
+final int myConstant = 42;
+// static type
+String myStringVariable = &quot;42&quot;;
+myStringVariable = 42; // compile error
+</code></pre>
+              </div>
+            </div>
+            
+            <div data-browser="scala" class="browser scala">
+              <h4>SCALA</h4>
+              <div data-lang="scala" class="code-block language-scala">
+                <pre><code>var myVariable = 42
+myVariable = 50
+val myConstant = 42
+// static type
+val myStringVariable = &quot;42&quot;
+myStringVariable = 42 // compile error
+</code></pre>
+              </div>
+            </div>
+            
+
+          </div>
+          
+          <div id="explicit_types" class="comparison">
+            <h3><a href="#explicit_types">Explicit Types</a></h3>
+            
+            
+            <div data-browser="java" class="browser java">
+              <h4>JAVA</h4>
+              <div data-lang="scala" class="code-block language-scala">
+                <pre><code>double explicitDouble = 70;
+</code></pre>
+              </div>
+            </div>
+            
+            <div data-browser="scala" class="browser scala">
+              <h4>SCALA</h4>
+              <div data-lang="scala" class="code-block language-scala">
+                <pre><code>val explicitDouble: Double = 70
+</code></pre>
+              </div>
+            </div>
+            
+
+          </div>
+          
+          <div id="type_coercion" class="comparison">
+            <h3><a href="#type_coercion">Type Coercion</a></h3>
+            
+            
+            <div data-browser="java" class="browser java">
+              <h4>JAVA</h4>
+              <div data-lang="scala" class="code-block language-scala">
+                <pre><code>String label = &quot;The width is &quot;;
+int width = 94;
+String widthLabel = label + width;
+</code></pre>
+              </div>
+            </div>
+            
+            <div data-browser="scala" class="browser scala">
+              <h4>SCALA</h4>
+              <div data-lang="scala" class="code-block language-scala">
+                <pre><code>val label = &quot;The width is &quot;
+val width = 94
+val widthLabel = label + width
+String Interpolation
+</code></pre>
+              </div>
+            </div>
+            
+
+          </div>
+          
+          <div id="range_operator" class="comparison">
+            <h3><a href="#range_operator">Range Operator</a></h3>
+            
+            
+            <div data-browser="java" class="browser java">
+              <h4>JAVA</h4>
+              <div data-lang="scala" class="code-block language-scala">
+                <pre><code>String names = new String[]{&quot;Anna&quot;, &quot;Alex&quot;, &quot;Brian&quot;, &quot;Jack&quot;};
+int count = names.length;
+for (int i = 0; i &lt; count; i++) {
+  System.out.println(&quot;Person &quot; + (i + 1) + &quot; is called &quot; + names[i]);
+}
+// Person 1 is called Anna
+// Person 2 is called Alex
+// Person 3 is called Brian
+// Person 4 is called Jack
+</code></pre>
+              </div>
+            </div>
+            
+            <div data-browser="scala" class="browser scala">
+              <h4>SCALA</h4>
+              <div data-lang="scala" class="code-block language-scala">
+                <pre><code>val names = Array(&quot;Anna&quot;, &quot;Alex&quot;, &quot;Brian&quot;, &quot;Jack&quot;)
+val count = names.length
+for (i &lt;- 0 until count) {
+  println(s&quot;Person ${i + 1} is called ${names(i)}&quot;)
+}
+// Person 1 is called Anna
+// Person 2 is called Alex
+// Person 3 is called Brian
+// Person 4 is called Jack
+</code></pre>
+              </div>
+            </div>
+            
+
+          </div>
+          
+          <div id="inclusive_range_operator" class="comparison">
+            <h3><a href="#inclusive_range_operator">Inclusive Range Operator</a></h3>
+            
+            
+            <div data-browser="java" class="browser java">
+              <h4>JAVA</h4>
+              <div data-lang="scala" class="code-block language-scala">
+                <pre><code>for (int i = 0; i &lt;= 5; i++) {
+  println(i + &quot; times 5 is &quot; + i * 5);
+}
+// 1 times 5 is 5
+// 2 times 5 is 10
+// 3 times 5 is 15
+// 4 times 5 is 20
+// 5 times 5 is 25
+</code></pre>
+              </div>
+            </div>
+            
+            <div data-browser="scala" class="browser scala">
+              <h4>SCALA</h4>
+              <div data-lang="scala" class="code-block language-scala">
+                <pre><code>for (index &lt;- 1 to 5) {
+  println(s&quot;$index times 5 is ${index * 5}&quot;)
+}
+// 1 times 5 is 5
+// 2 times 5 is 10
+// 3 times 5 is 15
+// 4 times 5 is 20
+// 5 times 5 is 25
+</code></pre>
+              </div>
+            </div>
+            
+
+          </div>
+          
+          
+        </div>
+      </section>
+      
+      <section id="collections" class="odd">
+        <div class="inner">
+          <h2>COLLECTIONS</h2>
+          
+          
+          <div id="arrays" class="comparison">
+            <h3><a href="#arrays">Arrays</a></h3>
+            
+            
+            <div data-browser="java" class="browser java">
+              <h4>JAVA</h4>
+              <div data-lang="scala" class="code-block language-scala">
+                <pre><code>String shoppingList = new String[]{&quot;catfish&quot;, &quot;water&quot;,
+  &quot;tulips&quot;, &quot;blue paint&quot;};
+shoppingList[1] = &quot;bottle of water&quot;;
+</code></pre>
+              </div>
+            </div>
+            
+            <div data-browser="scala" class="browser scala">
+              <h4>SCALA</h4>
+              <div data-lang="scala" class="code-block language-scala">
+                <pre><code>var shoppingList = Array(&quot;catfish&quot;,
+  &quot;water&quot;, &quot;tulips&quot;, &quot;blue paint&quot;)
+shoppingList(1) = &quot;bottle of water&quot;
+</code></pre>
+              </div>
+            </div>
+            
+
+          </div>
+          
+          <div id="maps" class="comparison">
+            <h3><a href="#maps">Maps</a></h3>
+            
+            
+            <div data-browser="java" class="browser java">
+              <h4>JAVA</h4>
+              <div data-lang="scala" class="code-block language-scala">
+                <pre><code>// java map could initial with values, but be careful
+// because it creates a new class that inherits from HashMap
+// http://stackoverflow.com/questions/6802483/how-to-directly-initialize-a-hashmap-in-a-literal-way
+HashMap&lt;String, String&gt; occupations = new HashMap&lt;String, String&gt;(){{
+  put(&quot;Malcolm&quot;, &quot;Captain&quot;);
+  put(&quot;Kaylee&quot;, &quot;Mechanic&quot;);
+}}; 
+occupations.put(&quot;Jayne&quot;, &quot;Public Relations&quot;);
+</code></pre>
+              </div>
+            </div>
+            
+            <div data-browser="scala" class="browser scala">
+              <h4>SCALA</h4>
+              <div data-lang="scala" class="code-block language-scala">
+                <pre><code>var occupations = scala.collection.mutable.Map(
+  &quot;Malcolm&quot; -&gt; &quot;Captain&quot;,
+  &quot;Kaylee&quot; -&gt; &quot;Mechanic&quot;
+)
+occupations(&quot;Jayne&quot;) = &quot;Public Relations&quot;
+</code></pre>
+              </div>
+            </div>
+            
+
+          </div>
+          
+          <div id="empty_collections" class="comparison">
+            <h3><a href="#empty_collections">Empty Collections</a></h3>
+            
+            
+            <div data-browser="java" class="browser java">
+              <h4>JAVA</h4>
+              <div data-lang="scala" class="code-block language-scala">
+                <pre><code>String[] emptyArray = new String[]{};
+Map&lt;String, Float&gt; emptyDictionary = Collections.emptyMap();
+// type must be specified
+Object emptyArrayNoType = new Object[]{};
+</code></pre>
+              </div>
+            </div>
+            
+            <div data-browser="scala" class="browser scala">
+              <h4>SCALA</h4>
+              <div data-lang="scala" class="code-block language-scala">
+                <pre><code>val emptyArray = Array[String]()
+val emptyDictionary = Map[String, Float]()
+val emptyArrayNoType = Array()
+</code></pre>
+              </div>
+            </div>
+            
+
+          </div>
+          
+          
+        </div>
+      </section>
+      
+      <section id="functions" >
+        <div class="inner">
+          <h2>FUNCTIONS</h2>
+          
+          
+          <div id="functions" class="comparison">
+            <h3><a href="#functions">Functions</a></h3>
+            
+            
+            <div data-browser="java" class="browser java">
+              <h4>JAVA</h4>
+              <div data-lang="scala" class="code-block language-scala">
+                <pre><code>// in java, you have to use class
+class Util {
+  static String greet(String name, String day) = {
+    return &quot;Hello &quot; + name +&quot;, today is &quot; + day + &quot;.&quot;;
+  }
+}
+System.out.println(Util.greet(&quot;Bob&quot;, &quot;Tuesday&quot;));
+</code></pre>
+              </div>
+            </div>
+            
+            <div data-browser="scala" class="browser scala">
+              <h4>SCALA</h4>
+              <div data-lang="scala" class="code-block language-scala">
+                <pre><code>def greet(name: String, day: String): String = {
+  return s&quot;Hello $name, today is $day.&quot;
+}
+greet(&quot;Bob&quot;, &quot;Tuesday&quot;)
+</code></pre>
+              </div>
+            </div>
+            
+
+          </div>
+          
+          <div id="tuple_return" class="comparison">
+            <h3><a href="#tuple_return">Tuple Return</a></h3>
+            
+            
+            <div data-browser="java" class="browser java">
+              <h4>JAVA</h4>
+              <div data-lang="scala" class="code-block language-scala">
+                <pre><code>// java has no tuple, have to create yourself
+class GasPrices {
+  public double min;
+  public double avg;
+  public double max;
+  public GasPrices(double min, double avg, double max) {
+    this.min = min;
+    this.avg = avg;
+    this.max = max;
+  }
+  public static GasPrices getGasPrices() = {
+    return new GasPrices(3.59, 3.69, 3.79);
+  }
+}
+</code></pre>
+              </div>
+            </div>
+            
+            <div data-browser="scala" class="browser scala">
+              <h4>SCALA</h4>
+              <div data-lang="scala" class="code-block language-scala">
+                <pre><code>def getGasPrices(): (Double, Double, Double) = {
+    return (3.59, 3.69, 3.79)
+}
+</code></pre>
+              </div>
+            </div>
+            
+
+          </div>
+          
+          <div id="variable_number_of_arguments" class="comparison">
+            <h3><a href="#variable_number_of_arguments">Variable Number Of Arguments</a></h3>
+            
+            
+            <div data-browser="java" class="browser java">
+              <h4>JAVA</h4>
+              <div data-lang="scala" class="code-block language-scala">
+                <pre><code>int sumOf(int... numbers) {
+  int sum = 0;
+  for (int number : numbers) {
+    sum += number;
+  }
+  return sum;
+}
+sumOf(42, 597, 12);
+</code></pre>
+              </div>
+            </div>
+            
+            <div data-browser="scala" class="browser scala">
+              <h4>SCALA</h4>
+              <div data-lang="scala" class="code-block language-scala">
+                <pre><code>def sumOf(numbers: Int*): Int = {
+  var sum = 0
+  for (number &lt;- numbers) {
+    sum += number
+  }
+  return sum
+}
+sumOf(42, 597, 12)
+</code></pre>
+              </div>
+            </div>
+            
+
+          </div>
+          
+          <div id="function_type" class="comparison">
+            <h3><a href="#function_type">Function Type</a></h3>
+            
+            
+            <div data-browser="java" class="browser java">
+              <h4>JAVA</h4>
+              <div data-lang="scala" class="code-block language-scala">
+                <pre><code>// have to use strategy_pattern in java
+// http://www.tutorialspoint.com/design_pattern/strategy_pattern.htm
+public interface Strategy {
+  public int addOne(int num);
+}
+public class OperationAddOne implements Strategy{
+  @Override
+  public int addOne(int num) {
+    return num1 + 1;
+  }
+}
+public class Context {
+  private Strategy strategy;
+  public Context(Strategy strategy){
+    this.strategy = strategy;
+  }
+  public Strategy makeIncrementer(){
+    return strategy;
+  }
+}
+public static void main(String[] args) {
+  Context c = new Context(new OperationAddOne());
+  Strategy s = c.makeIncrementer();  
+  System.out.println(s.addOne(7));
+}
+</code></pre>
+              </div>
+            </div>
+            
+            <div data-browser="scala" class="browser scala">
+              <h4>SCALA</h4>
+              <div data-lang="scala" class="code-block language-scala">
+                <pre><code>def makeIncrementer(): Int =&gt; Int = {
+  def addOne(number: Int): Int = {
+    return 1 + number
+  }
+  return addOne
+}
+var increment = makeIncrementer()
+increment(7)
+</code></pre>
+              </div>
+            </div>
+            
+
+          </div>
+          
+          <div id="map" class="comparison">
+            <h3><a href="#map">Map</a></h3>
+            
+            
+            <div data-browser="java" class="browser java">
+              <h4>JAVA</h4>
+              <div data-lang="scala" class="code-block language-scala">
+                <pre><code>int[] numbers = new int[]{20, 19, 7, 12};
+int[] triples = new int[numbers.length];
+for(int i = 0; i &lt; numbers.length; i++) {
+  triples[i] = numbers[i] * 3;
+}
+</code></pre>
+              </div>
+            </div>
+            
+            <div data-browser="scala" class="browser scala">
+              <h4>SCALA</h4>
+              <div data-lang="scala" class="code-block language-scala">
+                <pre><code>var numbers = Array(20, 19, 7, 12)
+numbers.map( number =&gt; 3 * number )
+</code></pre>
+              </div>
+            </div>
+            
+
+          </div>
+          
+          <div id="sort" class="comparison">
+            <h3><a href="#sort">Sort</a></h3>
+            
+            
+            <div data-browser="java" class="browser java">
+              <h4>JAVA</h4>
+              <div data-lang="scala" class="code-block language-scala">
+                <pre><code>// use Integer in order to sort in descending order
+Integer[] intArray = new Integer[] { 1, 5, 3, 12, 2 };
+Arrays.sort(intArray, Collections.reverseOrder());
+</code></pre>
+              </div>
+            </div>
+            
+            <div data-browser="scala" class="browser scala">
+              <h4>SCALA</h4>
+              <div data-lang="scala" class="code-block language-scala">
+                <pre><code>Array(1, 5, 3, 12, 2).sortWith(_ &gt; _)
+</code></pre>
+              </div>
+            </div>
+            
+
+          </div>
+          
+          <div id="named_arguments" class="comparison">
+            <h3><a href="#named_arguments">Named Arguments</a></h3>
+            
+            
+            <div data-browser="java" class="browser java">
+              <h4>JAVA</h4>
+              <div data-lang="scala" class="code-block language-scala">
+                <pre><code>int area(int width, int height) {
+  return width * height;
+}
+// have to invoke in order
+area(11, 10);
+</code></pre>
+              </div>
+            </div>
+            
+            <div data-browser="scala" class="browser scala">
+              <h4>SCALA</h4>
+              <div data-lang="scala" class="code-block language-scala">
+                <pre><code>def area(width: Int, height: Int): Int = {
+  return width * height
+}
+// invoke by name
+area(height = 10, width = 11)
+</code></pre>
+              </div>
+            </div>
+            
+
+          </div>
+          
+          
+        </div>
+      </section>
+      
+      <section id="classes" class="odd">
+        <div class="inner">
+          <h2>CLASSES</h2>
+          
+          
+          <div id="declaration" class="comparison">
+            <h3><a href="#declaration">Declaration</a></h3>
+            
+            
+            <div data-browser="java" class="browser java">
+              <h4>JAVA</h4>
+              <div data-lang="scala" class="code-block language-scala">
+                <pre><code>public class Shape {
+  public int numberOfSides = 0;
+  public String simpleDescription() {
+    return &quot;A shape with &quot; + numberOfSides + &quot; sides.&quot;;
+  }
+}
+</code></pre>
+              </div>
+            </div>
+            
+            <div data-browser="scala" class="browser scala">
+              <h4>SCALA</h4>
+              <div data-lang="scala" class="code-block language-scala">
+                <pre><code>class Shape {
+  var numberOfSides = 0
+  def simpleDescription(): String = {
+    return s&quot;A shape with $numberOfSides sides.&quot;
+  }
+}
+</code></pre>
+              </div>
+            </div>
+            
+
+          </div>
+          
+          <div id="usage" class="comparison">
+            <h3><a href="#usage">Usage</a></h3>
+            
+            
+            <div data-browser="java" class="browser java">
+              <h4>JAVA</h4>
+              <div data-lang="scala" class="code-block language-scala">
+                <pre><code>Shape shape = Shape();
+shape.numberOfSides = 7;
+String shapeDescription = shape.simpleDescription();
+</code></pre>
+              </div>
+            </div>
+            
+            <div data-browser="scala" class="browser scala">
+              <h4>SCALA</h4>
+              <div data-lang="scala" class="code-block language-scala">
+                <pre><code>var shape = new Shape()
+shape.numberOfSides = 7
+var shapeDescription = shape.simpleDescription()
+</code></pre>
+              </div>
+            </div>
+            
+
+          </div>
+          
+          <div id="subclass" class="comparison">
+            <h3><a href="#subclass">Subclass</a></h3>
+            
+            
+            <div data-browser="java" class="browser java">
+              <h4>JAVA</h4>
+              <div data-lang="scala" class="code-block language-scala">
+                <pre><code>public class NamedShape {
+  public int numberOfSides = 0;
+  public String name;
+  public NamedShape(String name) {
+    this.name = name;
+  }
+  public String simpleDescription() {
+    return &quot;A shape with &quot; + numberOfSides + &quot; sides.&quot;;
+  }
+}
+public class Square extends NamedShape {
+  Double sideLength;
+  public Square(Double sideLength, String name) {
+    this.sideLength = sideLength;
+    super(name);
+    numberOfSides = 4;
+  }
+  public Double area() {
+    return sideLength * sideLength;
+  }
+  public String simpleDescription() {
+    return &quot;A square with sides of length &quot; + sideLength;
+  }
+}
+Square test = new Square(5.2, &quot;my test square&quot;);
+test.area();
+test.simpleDescription();
+</code></pre>
+              </div>
+            </div>
+            
+            <div data-browser="scala" class="browser scala">
+              <h4>SCALA</h4>
+              <div data-lang="scala" class="code-block language-scala">
+                <pre><code>class NamedShape(var name: String) {
+  var numberOfSides: Int = 0
+  def simpleDescription() =
+    s&quot;A shape with $numberOfSides sides.&quot;
+}
+class Square(var sideLength: Double, name: String)
+  extends NamedShape(name) {
+  numberOfSides = 4
+  def area() = sideLength * sideLength
+  override def simpleDescription() =
+    s&quot;A square with sides of length $sideLength.&quot;
+}
+val test = new Square(5.2, &quot;my test square&quot;)
+test.area()
+test.simpleDescription()
+</code></pre>
+              </div>
+            </div>
+            
+
+          </div>
+          
+          <div id="checking_type" class="comparison">
+            <h3><a href="#checking_type">Checking Type</a></h3>
+            
+            
+            <div data-browser="java" class="browser java">
+              <h4>JAVA</h4>
+              <div data-lang="scala" class="code-block language-scala">
+                <pre><code>int movieCount = 0;
+int songCount = 0;
+for (Item item : library) {
+  if(item instanceof Movie) {
+    ++movieCount;
+  } else if (item instanceof Song) {
+    ++songCount;
+  }
+}
+</code></pre>
+              </div>
+            </div>
+            
+            <div data-browser="scala" class="browser scala">
+              <h4>SCALA</h4>
+              <div data-lang="scala" class="code-block language-scala">
+                <pre><code>var movieCount = 0
+var songCount = 0
+for (item &lt;- library) {
+  if (item.isInstanceOf[Movie]) {
+    movieCount += 1
+  } else if (item.isInstanceOf[Song]) {
+    songCount += 1
+  }
+}
+</code></pre>
+              </div>
+            </div>
+            
+
+          </div>
+          
+          <div id="downcasting" class="comparison">
+            <h3><a href="#downcasting">Downcasting</a></h3>
+            
+            
+            <div data-browser="java" class="browser java">
+              <h4>JAVA</h4>
+              <div data-lang="scala" class="code-block language-scala">
+                <pre><code>for (Object object : someObjects) {
+  Movie movie = (Movie) object; 
+  System.out.println(&quot;Movie: &quot; + movie.name + &quot;, dir. &quot; + movie.director);
+}
+</code></pre>
+              </div>
+            </div>
+            
+            <div data-browser="scala" class="browser scala">
+              <h4>SCALA</h4>
+              <div data-lang="scala" class="code-block language-scala">
+                <pre><code>for (obj &lt;- someObjects) {
+  val movie = obj.asInstanceOf[Movie]
+  println(s&quot;Movie: &#x27;${movie.name}&#x27;, dir. ${movie.director}&quot;)
+}
+</code></pre>
+              </div>
+            </div>
+            
+
+          </div>
+          
+          <div id="protocol" class="comparison">
+            <h3><a href="#protocol">Protocol</a></h3>
+            
+            
+            <div data-browser="java" class="browser java">
+              <h4>JAVA</h4>
+              <div data-lang="scala" class="code-block language-scala">
+                <pre><code></code></pre>
+              </div>
+            </div>
+            
+            <div data-browser="scala" class="browser scala">
+              <h4>SCALA</h4>
+              <div data-lang="scala" class="code-block language-scala">
+                <pre><code>trait Nameable {
+  def name(): String
+}
+def f[T &lt;: Nameable](x: T) = {
+  println(&quot;Name is &quot; + x.name())
+}
+</code></pre>
+              </div>
+            </div>
+            
+
+          </div>
+          
+          <div id="extensions" class="comparison">
+            <h3><a href="#extensions">Extensions</a></h3>
+            
+            
+            <div data-browser="java" class="browser java">
+              <h4>JAVA</h4>
+              <div data-lang="scala" class="code-block language-scala">
+                <pre><code></code></pre>
+              </div>
+            </div>
+            
+            <div data-browser="scala" class="browser scala">
+              <h4>SCALA</h4>
+              <div data-lang="scala" class="code-block language-scala">
+                <pre><code>object Extensions {
+  implicit class DoubleUnit(d: Double) {
+    def km: Double = { return d * 1000.0 }
+    def m: Double = { return d }
+    def cm: Double = { return d / 100.0 }
+    def mm: Double = { return d / 1000.0 }
+    def ft: Double = { return d / 3.28084 }
+  }
+}
+import Extensions.DoubleUnit
+val oneInch = 25.4.mm
+println(s&quot;One inch is $oneInch meters&quot;)
+// prints &quot;One inch is 0.0254 meters&quot;
+val threeFeet = 3.ft
+println(s&quot;Three feet is $threeFeet meters&quot;)
+// prints &quot;Three feet is 0.914399970739201 meters&quot;
+</code></pre>
+              </div>
+            </div>
+            
+
+          </div>
+          
+          
+        </div>
+      </section>
+      
+
+    </div>
+    <footer><p>Shamelessly forked from <a href="http://youmightnotneedjquery.com/">http://youmightnotneedjquery.com/</a>.</footer>
+  </div>
+  <div style="-webkit-transform: translateZ(0);"></div>
+</body>

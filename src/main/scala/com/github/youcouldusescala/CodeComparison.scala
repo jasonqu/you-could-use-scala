@@ -31,7 +31,12 @@ object Generator {
               code = ""
             }
             title = x.substring(3)
-          case x if x.startsWith("##") => category = x.substring(2)
+          case x if x.startsWith("##") =>
+            if (!code.trim().isEmpty()) {
+              list = CodeComparison(category, title, language, code) :: list
+              code = ""
+            }
+            category = x.substring(2)
           case x if x.startsWith("\t") =>
             code = code + x.substring(1) + '\n'
         }

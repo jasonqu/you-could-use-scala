@@ -18,3 +18,5 @@ lazy val root = (project in file(".")).enablePlugins(SbtTwirl)
 //)
 
 resolvers += "Typesafe Releases Repository" at "http://repo.typesafe.com/typesafe/releases/"
+
+site.settings
