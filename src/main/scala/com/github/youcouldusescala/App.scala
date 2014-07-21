@@ -14,6 +14,6 @@ object App extends App {
 //  println(Generator.processFile(new java.io.File("src/main/content/content.md")).head)
 //  println(html.index(cats, tits, languages, data))
   
-  val p = new java.io.PrintWriter("site/index.html")
+  val p = new java.io.PrintWriter("src/site/index.html")
   try { p.write(html.index(cats, tits, languages, data).toString()) } finally { p.close() }
 }
